@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+	ServerName wp2.dev
+	DocumentRoot /home/dev/wordpress2
+
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /home/dev/wordpress2>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/wordpress2_error.log
+	LogLevel warn
+</VirtualHost>
